@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+* printf_buffer - prints  buffer content
+* @buffer: Array of characters
+* buff_ind: Index at which to add next chars
+*/
 void print_buffer(char buffer[], int *buff_ind);
 
 /**
