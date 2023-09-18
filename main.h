@@ -30,6 +30,15 @@ struct fmt
 	int (*fn)(va_list, char[], int, int, int, int);
 };
 
+/**
+ * is_digit - Check if a character is a digit.
+ * @c: The character to check.
+ * Return: true if it's a digit, false otherwise.
+ */
+struct bool is_digit(char c)
+{
+	return (c >= '0' && c <= '9');
+};
 
 /**
  * typedef struct fmt fmt_t - Struct op
@@ -113,6 +122,7 @@ int is_digit(char);
 
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
+
 
 #endif /* MAIN_H */
 
