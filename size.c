@@ -1,11 +1,9 @@
-#include "main.h"
-
 /**
- * get_size - Calculates the size of cast targument
- * @format: Formatted string
- * @i: List of arguments to print.
+ * get_size - Determines the size of a format specifier argument.
+ * @format: Formatted string.
+ * @i: Pointer to the current position in the format string.
  *
- * Return: Precision.
+ * Return: Size specifier (S_LONG or S_SHORT) or 0 if no valid size found.
  */
 int get_size(const char *format, int *i)
 {
@@ -13,14 +11,20 @@ int get_size(const char *format, int *i)
 	int size = 0;
 
 	if (format[curr_i] == 'l')
+	{
 		size = S_LONG;
+	}
 	else if (format[curr_i] == 'h')
+	{
 		size = S_SHORT;
-
+	}
 	if (size == 0)
+	{
 		*i = curr_i - 1;
+	}
 	else
+	{
 		*i = curr_i;
-
+	}
 	return (size);
 }
